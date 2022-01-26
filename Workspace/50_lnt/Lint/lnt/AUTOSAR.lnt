@@ -1,0 +1,161 @@
+/**\page           AUTOSAR_lnt                                   Lint config file  -  AUTOSAR.lnt
+ **************************************************************************************************
+ *
+ * \copyright <b>COPYRIGHT &copy; CONTINENTAL AUTOMOTIVE GMBH</b>
+ * \copyright <b>ALLE RECHTE VORBEHALTEN - ALL RIGHTS RESERVED</b>
+ * \copyright The reproduction, transmission or use of this document or its                      \n
+ *            contents is not permitted without express written authority                        \n
+ *            Offenders will be liable for damages                                               \n
+ *            All rights, including rights created by patent grant or                            \n
+ *            registration of a utility model or design, are reserved.
+ *
+ *
+ **************************************************************************************************
+ *
+ * \b Project:       Generic
+ *
+ **************************************************************************************************
+ *
+ * <b>Information automatically provided by IMS:</b>
+ *
+ *  $ProjectName: /PS/Algorithm_Generic/TESTING/10_Environment/80_Lint/Lint/lnt/project.pj $
+ *
+ **************************************************************************************************
+ *
+ * <b> File Information: </b>
+ *  $Author: Goepelt, Daniel (uid09574) $
+ *  $Date: 2020/10/12 07:06:48CEST $
+ *  $Source: AUTOSAR.lnt $
+ *  $Revision: 1.3 $
+ *  $State: none $
+ *
+ **************************************************************************************************
+ *
+ *  \b PURPOSE:  LINT Configuration for special Handling of AUTOSAR related "special" files
+ *   
+ *
+ **************************************************************************************************
+ *
+ * \remarks      [e.g. design constrains ...]
+ *   none \n   
+ *
+ **************************************************************************************************
+ *
+ * <b> CHANGE HISTORY: </b>                                                                      \n
+ *   Log of all revisions so far:                                                                \n
+ *   $Log: AUTOSAR.lnt  $ 
+ *   Revision 1.3 2020/10/12 07:06:48CEST Goepelt, Daniel (uid09574)  
+ *   added *MemMap*.h suppression for Algo file name 
+ *   Revision 1.2 2020/02/19 16:23:41CET Goepelt, Daniel (uid09574)  
+ *   took over from "project learned" -esym( 961,19.1) 
+ *   Revision 1.1 2019/08/06 17:39:00CEST Goepelt, Daniel (uid09574)  
+ *   Initial revision 
+ *   Member added to project /PS/OSIS_SW_PMG/07_Tool_Data/PC-Lint_9/project.pj 
+ *
+ *************************************************************************************************/
+
+/***********************************************************************************************************/
+// !!ATTENTION THIS FILE MUST NOT BE MODIFIED ON PROJECT LEVEL!!
+/***********************************************************************************************************/
+ 
+/*********************************************************************************************/
+/* 451 Header file 'FileName' repeatedly included but does not have a standard include guard */
+// -- The file named in the message has already been included in the current module. Moreover
+// it has been determined that this header does not have a standard include guard. A standard
+// include guard has the form
+// #ifndef Name
+// #define Name
+// ...
+// #endif
+// with nothing but comments before and after this sequence and nothing but comments between
+// the #ifndef and the #define Name.
+// This warning may also be accompanied by a 537 (repeated include header). Message 537 is often
+// suppressed because if you are working with include guards it is not a helpful message.
+// However,the message 451 should be left on in order to check the consistency of the include
+// guards themselves. See also Elective Note 967.
+// +e451
+// -efile( 451,...)
+-efile( 451,MemMap.h)
+-efile( 451,"*_MemMap.h")
+-efile( 451,"MemMap_*.h")
+-efile( 451,Std_Types.h)
+-efile( 451,"*/Autosar/BSW/*.h")
+-efile( 451,"*\Autosar\BSW\*.h")
+-efile( 451,GLB_Datatypes.h)
+-efile( 451,*GLB_Datatypes.h)
+-efile( 451,Platform_Types.h)
+-efile( 451,Compiler.h)
+-efile( 451,MemMapExt.h)
+
+/****************************************/
+/* 537 Repeated include file 'FileName' */
+// --
+// The file whose inclusion within a module is being requested has already been included
+// in this compilation. The file is processed normally even if the message is given. If
+// it is your standard practice to repeat included files then simply suppress this message.
+// +e537
+// -efile( 537,...)
+
+-efile( 537,MemMap.h)
+-efile( 537,"*_MemMap.h")
+-efile( 537,"MemMap_*.h")
+
+
+-esym( 750,*_START_SEC_*)
+-esym( 750,*_STOP_SEC_*)
+
+/*****************************************************************/
+/* 760: Redundant macro 'Symbol' defined identically at Location */
+// --
+// The given macro was defined earlier (location given) in the same way and is hence redundant.
+// 
+-esym( 760,MEMMAP_VENDOR_ID)
+-esym( 760,MEMMAP_MODULE_ID)
+-esym( 760,MEMMAP_AR_MAJOR_VERSION)
+-esym( 760,MEMMAP_AR_MINOR_VERSION)
+-esym( 760,MEMMAP_AR_PATCH_VERSION)
+-esym( 760,MEMMAP_SW_MAJOR_VERSION)
+-esym( 760,MEMMAP_SW_MINOR_VERSION)
+-esym( 760,MEMMAP_SW_PATCH_VERSION)
+
+/************************************************************************/
+/* 766: Include of header file ’FileName’ not used in module ’FileName’ */
+// --
+// The named header file was directly included in the named module but the #include
+// can be removed because it was not used in processing the named module or in any
+// header included by the module. It contained no macro, typedef, struct, union or
+// enum tag or component, or declaration referenced by the module. One of the reasons a
+// particular #include can be removed is because it had been included by an earlier
+// header file. Warning 537 can be used to detect such cases. Note: Through conditional
+// compilation some seeming anomalies could occur so that header files that are reported
+// as not used might be regarded as used if they are placed earlier in a sequence of
+// includes. See also Elective Notes 964, 966 and Section 13.8.1 Unused Headers
+// +e766
+// -efile( 766,...)
+
+-efile( 766,"*_MemMap.h")
+-efile( 766,"MemMap_*.h")
+//for ALGO MemMap handling
+-efile( 766,"*MemMap*.h")
+-efile( 766,MemMap.h)
+
+/************************************************************************/
+/* 967: Header file 'FileName' does not have a standard include guard   */
+-efile( 967,asm.h)
+-efile( 967,Platform_Types.h)
+-efile( 967,Std_Types.h)
+-efile( 967,GLB_Datatypes.h)
+-efile( 967,"*/GLB_Datatypes.h")
+-efile( 967,"*\GLB_Datatypes.h")
+-efile( 967,MemMap.h)
+-efile( 967,*_MemMap.h)
+-efile( 967,MemMap._*h)
+-efile( 967,*Autosar*BSW*.h)
+-efile( 967,"*/Autosar/RTE/gen/*.h")
+-efile( 967,"*\Autosar\RTE\gen\*.h")
+
+/****************************Taken over from former Project.lnt ********/
+
+                    //
+-esym( 961,19.1)         //  Note 961: Violates MISRA 2004 Advisory Rule 19.1, declaration before #include: 'unnamed' 
+

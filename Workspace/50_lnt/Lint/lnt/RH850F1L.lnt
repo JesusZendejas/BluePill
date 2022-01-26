@@ -1,0 +1,51 @@
+//PICTUS specific lint settings
+/**********************************************************************************************************/
+// Memory and data type definitions
+/**********************************************************************************************************/
+/**********************************************************************************************************/
+// !!ATTENTION THIS FILE MUST NOT BE MODIFIED ON PROJECT LEVEL!!
+//
+//   THIS FILE has to be modified for Renesas
+//   currently it is just a copy of PICTUS.lnt
+//
+/**********************************************************************************************************/
+
+
+-sb8			// 8 bits form one byte
+-sc1			// sizeof(char)
+-ss2			// sizeof(short)
+-si4			// sizeof(int)
+-sl4			// sizeof(long)
+-sll8                   // sizeof(long long)                                              
+-sf4			// sizeof(float)
+-sd8			// sizeof(double)
+-sld8			// sizeof(long double)    
+-spN4			// sizeof(near *) code and data !
+-spF4			// sizeof(far *)  code and data !
+                 
+
+// 701 Shift left of signed quantity (int) -- Shifts are normally accomplished on unsigned
+// operands.
+                                                                                
+-e701     // this CPU is capable of shifting signed values therefore we switch off the messages  
+
+// 702 Shift right of signed quantity (int) -- Shifts are normally accomplished on unsigned
+// operands. Shifting an int right is machine dependent (sign fill vs. zero fill).
+
+-e702     
+
+// 703 Shift left of signed quantity (long) -- Shifts are normally accomplished on unsigned
+// operands.
+                                                                                       
+-e703             
+
+// 704 Shift right of signed quantity (long) -- Shifts are normally accomplished on unsigned
+// operands. Shifting a long right is machine dependent (sign fill vs. zero fill).
+                                                                               
+-e704                                                                                            
+                    
+                                                                             
++ppw(warning) //this enables the keyword "#warning" which is supported by Windriver compiler     
++ppw(info) //this enables the keyword "#info" which is supported by Windriver compiler
+
+-rw_asgn(__attribute__,__gcc_attribute__) //the compiler supports some intrinsics that come with the attribute keyword which lets PcLint struggle

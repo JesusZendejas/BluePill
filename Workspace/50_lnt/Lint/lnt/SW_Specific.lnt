@@ -1,0 +1,212 @@
+/**\page           project_lnt                                     Lint config file  -  project.lnt
+ **************************************************************************************************
+ *
+ * \copyright <b>COPYRIGHT &copy; CONTINENTAL AUTOMOTIVE GMBH</b>
+ * \copyright <b>ALLE RECHTE VORBEHALTEN - ALL RIGHTS RESERVED</b>
+ * \copyright The reproduction, transmission or use of this document or its                      \n
+ *            contents is not permitted without express written authority                        \n
+ *            Offenders will be liable for damages                                               \n
+ *            All rights, including rights created by patent grant or                            \n
+ *            registration of a utility model or design, are reserved.
+ *
+ *
+ **************************************************************************************************
+ *
+ * \b Project:       TEMPLATE
+ *
+ **************************************************************************************************
+ *
+ * <b>Information automatically provided by IMS:</b>
+ *
+ *  $ProjectName: /PS/Algorithm_Generic/TESTING/10_Environment/80_Lint/Lint/lnt/project.pj $
+ *
+ **************************************************************************************************
+ *
+ * <b> File Information: </b>
+ *  $Author: Goepelt, Daniel (uid09574) $
+ *  $Date: 2020/04/27 18:24:53CEST $
+ *  $Source: SW_Specific.lnt $
+ *  $Revision: 1.2 $
+ *  $State: none $
+ *
+ **************************************************************************************************
+ *
+ *  \b PURPOSE:  This file contains Lint settings which are comon for usual SW Projects.
+ *   
+ *
+ **************************************************************************************************
+ *
+ * \remarks      [e.g. design constrains ...]
+ * Message Format:
+ * -"format=%(%f %l:%) Error -> %t %n %m"
+ * format used by Codewright's default ...
+ * error parser.  Note we prefix every message with "Error" so they show up during error navigation.
+ *
+ **************************************************************************************************
+ *
+ * <b> CHANGE HISTORY: </b>                                                                      \n
+ *   Log of all revisions so far:                                                                \n
+ *   $Log: SW_Specific.lnt  $ 
+ *   Revision 1.2 2020/04/27 18:24:53CEST Goepelt, Daniel (uid09574)  
+ *   enabled deep dive multi pass scan 
+ *   Revision 1.1 2020/03/10 11:39:10CET Goepelt, Daniel (uid09574)  
+ *   Initial revision 
+ *   Member added to project /PS/OSIS_SW_PMG/07_Tool_Data/PC-Lint_9_Generic/Generic/Lint/lnt/project.pj 
+ *   Initial revision 
+ *   Member added to project /PS/SPEED_3_0/20_Engineering/20_SW/30_Environment/Project/Lint/project.pj 
+ *   Content derived from: rev.1.10
+ *   http://ims-pss:7001/si/viewrevision?projectName=%2FPS%2FSPEED_4_0%2F20_Engineering%2F20_SW%2F55_Components%2FComponent_Utils%2FEnvironment%2FProject%2FLint%2Flnt%2Fproject.pj&selection=Project.lnt
+ *
+ *************************************************************************************************/
+
+
+//  compiler :
+
+    -"d__SIZE_T_TYPE__=unsigned int"            // "string.h"
+    -dasm(x)=
+
+    +rw(__attribute__)
+    +rw(__asm)
+
+// moved here from the "specific" au-misra2.lnt; overrides the -idlen(31) setting from au-misra2.lnt
+
+    -idlen(100)   /* flag names identical in the first 100 characters */
+
+// enable the "deep dive" multi pass scan of Lint
+// adjusts the depth of static variable analysis
+// 3 is a compromise between execution speed and search depth
+-static_depth(4)
+// see user manual chapter 10. VALUE TRACKING
+-passes(4) 
+
+//  algorithm files vs. software files :
+
+    -esym(962,GLB_INLINE)               //  Note 962 Macro 'GLB_INLINE' defined identically at another location (line <...>, file <...>)
+    -esym(760,GLB_INLINE)               //  Info 760 Redundant macro 'GLB_INLINE' defined identically at line <...>, file <...>
+
+    -esym(962,FALSE)                    //  Note 962 Macro 'FALSE' defined identically at another location (line <...>, file <...>)
+    -esym(760,FALSE)                    //  Info 760 Redundant macro 'FALSE' defined identically at line <...>, file <...>
+    -esym(962,TRUE)                     //  Note 962 Macro 'TRUE' defined identically at another location (line <...>, file <...>)
+    -esym(760,TRUE)                     //  Info 760 Redundant macro 'TRUE' defined identically at line <...>, file <...>
+    -esym(962,NULL)                     //  Note 962 Macro 'NULL' defined identically at another location (line <...>, file <...>)
+    -esym(760,NULL)                     //  Info 760 Redundant macro 'NULL' defined identically at line <...>, file <...>
+    -esym(962,T_VOID)                   //  Note 962 Macro 'T_VOID' defined identically at another location (line <...>, file <...>)
+    -esym(760,T_VOID)                   //  Info 760 Redundant macro 'T_VOID' defined identically at line <...>, file <...>
+
+    -esym(962,EXTERN)                   //  Note 962 Macro 'EXTERN' defined identically at another location (line <...>, file <...>)
+    -esym(760,EXTERN)                   //  Info 760 Redundant macro 'EXTERN' defined identically at line <...>, file <...>
+    -esym(962,STATIC)                   //  Note 962 Macro 'STATIC' defined identically at another location (line <...>, file <...>)
+    -esym(760,STATIC)                   //  Info 760 Redundant macro 'STATIC' defined identically at line <...>, file <...>
+    -esym(962,PUBLIC)                   //  Note 962 Macro 'PUBLIC' defined identically at another location (line <...>, file <...>)
+    -esym(760,PUBLIC)                   //  Info 760 Redundant macro 'PUBLIC' defined identically at line <...>, file <...>
+    -esym(962,PROTECTED)                //  Note 962 Macro 'PROTECTED' defined identically at another location (line <...>, file <...>)
+    -esym(760,PROTECTED)                //  Info 760 Redundant macro 'PROTECTED' defined identically at line <...>, file <...>
+    -esym(962,PRIVATE)                  //  Note 962 Macro 'PRIVATE' defined identically at another location (line <...>, file <...>)
+    -esym(760,PRIVATE)                  //  Info 760 Redundant macro 'PRIVATE' defined identically at line <...>, file <...>
+    -esym(962,FUNCTION_CALL)            //  Note 962 Macro 'FUNCTION_CALL' defined identically at another location (line <...>, file <...>)
+    -esym(760,FUNCTION_CALL)            //  Info 760 Redundant macro 'FUNCTION_CALL' defined identically at line <...>, file <...>
+    -esym(962,CLASS_NAME)               //  Note 962 Macro 'CLASS_NAME' defined identically at another location (line <...>, file <...>)
+    -esym(760,CLASS_NAME)               //  Info 760 Redundant macro 'CLASS_NAME' defined identically at line <...>, file <...>
+
+
+//  software structure :
+
+    -e537           //  Repeated include file 'FileName' --
+                    //  The file whose inclusion within a module is being requested has already
+                    //  been included in this compilation.
+
+    -e934           //  Note 934 Taking address of near auto variable '...' (arg. no. ...)
+    -esym(960,18.4) //  Note 960 Violates MISRA 2004 Required Rule 18.4, unions shall not be used
+
+
+	-esym(960, 20.2) // Note 960: Violates MISRA 2004 Required Rule 20.2, Re-use of C90 identifier pattern. --> Header Guard
+	
+
+//  e526    Symbol 'Symbol' (Location) not defined --
+//          The named external was referenced but not defined
+
+    -esym(526,C_v_AssertFailed)         //  function is defined in asm part
+
+
+//  unit scope fo PC-Lint check :
+
+//  -u      unit checkout --
+//          This is one of the more frequently used options. It is used when linting a subset
+//          (frequently just one) of the  modules comprising a program. -u suppresses the
+//          inter-module messages 526, 552, 628, 714, 729, 755-759, 765, 768, 769, (...)
+//          Aside from this, there is no change in processing.
+
+
+//  disable checks :
+//
+
+   
+    -e526           //  Symbol 'Symbol' (Location) not defined --
+                    //  The named external was referenced but not defined
+
+/************** start Mem Map **************/
+//disabled because file name specific contained in AUTOSAR.lnt
+//    -e451          // repeatedly included but does not have a standard include guard [MISRA 2004 Rule 19.15, required]
+//disabled because file name specific contained in AUTOSAR.lnt                    
+//    -e967           // does not have a standard include guard
+
+/************** end Mem Map **************/
+                    //
+
+    -e714           //  Symbol 'Symbol' (Location) not referenced --
+                    //  The named external variable or external function was defined but not referenced.
+    -e755           //  global macro 'Symbol' (Location) not referenced --
+                    //  A 'global' macro is one defined in a header file.
+                    //  This message is given for macros defined in non-library headers.
+    -e756           //  global typedef 'Symbol' (Location) not referenced --
+                    //  This message is given for a typedef symbol declared in a non-library header file.
+                    //  The symbol is not used in any of the modules comprising a program.
+    -e757           //  global declarator 'Symbol' (Location) not referenced --
+                    //  This message is given for objects that have been declared in non-library header files
+                    //  and that have not been used in any module comprising the program being checked.
+    -e758           //  global struct, union or enum tag 'Symbol' (Location) not referenced --
+                    //  This message is given for struct, union and enum tags that have been defined in non-library
+                    //  header files and that have not been used in any module comprising the program.
+    -e759           //  header declaration for symbol 'Symbol' (Location) could be moved from header to module --
+                    //  This message is given for declarations, within non-library header files,
+                    //  that are not referenced outside the defining module.
+    -e765           //  external 'Symbol' (Location) could be made static --
+                    //  An external symbol was referenced in only one module.
+                    //  It was not declared static (and its type is not qualified with the Microsoft keyword __export).
+    -e768           //  global struct member 'Symbol' (Location) not referenced --
+                    //  A member (name provided as Symbol) of a struct or union appeared in a non-library header file
+                    //  but was not used in any module comprising the program.
+    -e769           //  global enumeration constant 'Symbol' (Location) not referenced --
+                    //  A member (name provided as Symbol) of an enum appeared in a non-library header file
+                    //  but was not used in any module comprising the program.
+
+    -e963           //  Qualifier const or volatile follows/precedes a type; use -fqb/ +fqb to reverse the test				
+
+    -e904           //  Return statement before end of function. This is acceptable due to design. Missing return
+                    //  will be identified by Warning 533
+    -e586           //  Warning 586: keyword 'asm' is deprecated : asm keyword is required due to embedded architecture
+	
+	
+	
+// Deactivate notes and infos which have problems with MemMap concept:
+
+	//-e961			   //  do not re-enable this line. it suppressed the whole message
+    // Moved to AUTOSAR .lnt -esym( 961,19.1)   //  Note 961: Violates MISRA 2004 Advisory Rule 19.1, declaration before #include: 'unnamed' 
+	
+	//DaGo: candidate to be for coding rule enforcement re-enabled
+    -esym( 961,19.7)   //  Note 961: Violates MISRA 2004 Advisory Rule 19.7, Function-like macro defined:
+	
+	-esym( 961,12.13)  //  Note 961: Violates MISRA 2004 Advisory Rule 12.13, increment or decrement combined with another operator
+	//Lint strong type model is not free of Bugs, enforcing this rule causes far to many false alarms
+	-esym( 961,12.6)   //  Note 961: Violates MISRA 2004 Advisory Rule 12.6, boolean expression required for operator: '!'; the -strong(B,...) option can help provide Boolean-by-enforcement
+
+	-e962			   //  Note 962: Macro 'XXXXX' defined identically at another location
+	-esym( 960,11.5)   //  Note 960: Violates MISRA 2004 Required Rule 11.5, attempt to cast away const/volatile from a pointer or reference
+	-e750			   //  Info 750: local macro 'XXXXX'
+	
+//ASM related enhancements	
++rw(_up_to_brackets)
+-dasm=_up_to_brackets
++linebuf
++linebuf
++linebuf

@@ -1,0 +1,138 @@
+/************************************************************************************************************
+* BU: PPS                                                                                                   *
+* Name: LINT Configuration for uC projects in Algo                                                   *
+* Created: 03.12.2015                                                                                       *
+* Author: Razvan Voina                                                                                 *
+************************************************************************************************************/
+/***********************************************************************************************************/
+// !!ATTENTION THIS FILE MUST NOT BE MODIFIED ON PROJECT LEVEL!!
+/***********************************************************************************************************/
+
+/***********************************************************************************************************/
+// Message format
+/***********************************************************************************************************/
+-"format=%(%f(%l):%) Error -> %t %n %m"
+// format used by Codewright's default ...
+// error parser.  Note we prefix every message with "Error"
+// so they show up during error navigation. 
+
+/***********************************************************************************************************/
+// General settings
+/***********************************************************************************************************/
+-strong(AirpaczJermdnaocz)
+// A Issue a warning upon some kind of Assignment to the strong type.
+// (assignment operator, return value, argument passing, initialization).
+// i ignore Initialization.
+// r ignore Return statements.
+// p ignore argument Passing.
+// a ignore the Assignment operator.
+// c ignore assignment of Constants.
+// z ignore assignment of Zero.
+
+// J Check for strong typing when a value is Joined (i.e., combined) 
+// with another type across a binary operator.
+// e ignore Equality operators (== and !=) and the conditional operator (?:).
+// r ignore the four Relational operators (> >= < <=).
+// m ignore the three multiplication operators (* / %)
+// d The strong type will be considered a dimension for the purpose of dimensional
+// analysis (See Section 9.4.4 Dimensional Analysis). This is the normal default
+// n The strong type will be considered dimensionally neutral. See Section 9.4.2
+// Dimensionally Neutral (Jn).
+// a The strong type will be considered anti-dimensional (See Section 9.4.3 Anti-
+// Dimensional (Ja). This would be the default if option -fdd were given turning off
+// the Dimension by Default flag.
+// o ignore the Other binary operators, which are the two additive operators (+ - ) and
+// the three bit-wise operators (| & ^).
+// c ignore combining with Constants.
+// z ignore when combining with a Zero value. See the 'A' flag above for what
+// constitutes a zero.
+
++fdi
+//Directory of Including file
+
++fll
+//Enable long long data type usage
+
+-dinline=__inline 
+//rename the keyword "inline" to "__inline" which is used by Lint
+      
+-d__inline__=__inline
+
+/***********************************************************************************************************/
+// Warning levels
+/***********************************************************************************************************/
+-w4
+// general warning level
+
+-wlib(4)
+// -wlib(Level) sets a warning level for processing library headers. 
+// It will not affect C source modules.
+// -wlib(0) means no library messages
+
+-width(0)
+// don't break lines
+
+-hF1
+// always supply a File name
+
++e900
+// always produce at least one line of output
+
++ffn
+// use Full File Names (i.e. complete path names) in messages
+
++fce
+// (continue on #error directive encountered)
+
+-maxopen(100)
+
+/**********************************************************************************************************/
+// Global message settings: defined as SW and Algo standard settings
+/**********************************************************************************************************/
+
+/**********************************************************************************************************/
+//global message suppression
+/**********************************************************************************************************/
+-e830   // Location cited in prior message
+-e831   // Reference cited in prior message
+//-e974   // Just informational purpose. Activate for test team and report only if recursive functions are detected.
+-e975   // Unrecognised pragma ’Name’ will be ignored
+
+//suppressions agreed in the ALGO Team  see document PS/Algorithm_Generic/TESTING/07_Guidelines/Algo_Additional_Coding_and_Testing_Rules.docx, rev:1.3, Chapter: 2.2.3
+-e1932
+-e1716
+-e1962
+
+
+ //  ANSI limitations :
+-"esym(835, +)" // Error -> Info 835 A zero has been given as left/right argument to operator '+'
+-"esym(793, significant characters in an external identifier)" //  Info 793 ANSI/ISO limit of 6 'significant characters in an external identifier', 'Symbol', exceeded -- processing is unaffected
+-"esym(793, parens in expression)"                             //  Info 793 ANSI/ISO limit of 32 'parens in expression' exceeded -- processing is unaffected
+
+
+/**********************************************************************************************************/
+//global message enabling
+/**********************************************************************************************************/
+
+
+/**********************************************************************************************************/
+//selective message suppression
+/**********************************************************************************************************/
+-esym(960, 8.9)
+-esym(960, 10.6)
+-esym(960, 17.4)
+-esym(960, 19.4)
+-esym(960, 19.7)
+-esym(960, 5.1)
+
+// 8.9 An identifier with external linkage shall have exactly one external definition.
+// This message has a PC-Lint bug and is wrong generated
+// 10.6 A "U" suffix shall be applied to all constants of unsigned type.
+// it conflicts with our rule to use type cast and no suffix
+// 17.4 Array indexing shall be the only allowed form of pointer arithmetic.
+// 19.4 Disallowed definition for macro
+// 19.7 A function should be used in preference to a function-like macro.
+// functions-like macros are used on SW side. In algo side their are not used and this is visualy checked
+// 5.1 Identifiers (internal and external) shall not rely on the significance of more than 31 characters.
+// It was decided in the 2013 testing workshop to suppress this message.
+// The unsafe cases of identifiers which are the same in first their 31 characters are reported trough message 621.

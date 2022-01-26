@@ -1,0 +1,5 @@
+
+// Note 960: Violates MISRA 2004 Required Rule 20.2, Re-use of C90 identifier pattern. 
+// --> Header Guards starting with "E"
+// --> ALGO defines such as EXTERN or ECS
+-esym(960, 20.2) 

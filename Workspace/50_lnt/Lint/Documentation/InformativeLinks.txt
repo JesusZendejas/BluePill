@@ -1,0 +1,5 @@
+A guideline how to document suppressions can be found here:
+http://confluence.conti.de:8090/display/department0025/PC-Lint+Suppressions
+
+A guideline how to integrate PcLint into projects can be found here:
+http://confluence.conti.de:8090/display/department0025/How+is+Lint+to+be+integrated+in+projects

@@ -1,0 +1,196 @@
+/************************************************************************************************************
+* BU: PPS                                                                                                   *
+* Name: LINT Configuration for uC projects in SW and Algo                                                   *
+* Created: 21.03.2013                                                                                       *
+* Author: Maria-Aurora Popa                                                                                 *
+************************************************************************************************************/
+/***********************************************************************************************************/
+// !!ATTENTION THIS FILE MUST NOT BE MODIFIED ON PROJECT LEVEL!!
+/***********************************************************************************************************/
+
+
+/***********************************************************************************************************/
+// General settings
+/***********************************************************************************************************/
+-strong(AirpaczJermdnaocz)
+// A Issue a warning upon some kind of Assignment to the strong type.
+// (assignment operator, return value, argument passing, initialization).
+// J Check for strong typing when a value is Joined (i.e., combined) 
+// with another type across a binary operator.
+// c ignore assignment of Constants.
+// z ignore assignment of Zero.
+
++fdi
+//Directory of Including file
+
+-dinline=__inline 
+//rename the keyword "inline" to "__inline" which is used by Lint
+      
+/***********************************************************************************************************/
+// Warning levels
+/***********************************************************************************************************/
+-w4
+// general warning level
+
+-wlib(4)
+// -wlib(Level) sets a warning level for processing library headers. 
+// It will not affect C source modules.
+// -wlib(0) means no library messages
+
+-width(0)
+// don't break lines
+
+-hF1
+// always supply a File name
+
++e900
+// always produce at least one line of output
+
++ffn
+// use Full File Names (i.e. complete path names) in messages
+
++fce
+// (continue on #error directive encountered)
+
++fll
+//Daniel Goepelt:
+//Algo specific extension taken over from: Generic\Lint\Algo_specific.lnt 
+//Enable long long data type usage
+
+-maxopen(100)
+
+/**********************************************************************************************************/
+// Global message settings: defined as SW and Algo standard settings
+/**********************************************************************************************************/
+
+/**********************************************************************************************************/
+//global message suppression
+/**********************************************************************************************************/
+
+
+
+-e525   // Unexpected negative indentation
+-e537   // Repeated include file 'FileName'
+-e539   // Did not expect positive indentation from Location
+-e556   // indented  #
+-e571   // 571 Suspicious Cast
+-e725   // Positive Indentation expected
+-e778   // constant expression evaluates to 0
+-e830   // Location cited in prior message
+-e831   // Reference cited in prior message
+-e911   // 911 Implicit expression promotion from Type to Type
+-e915   // 915 Implicit conversion (Context) Type to Type
+-e919   // implicit conversion: we are getting bigger so where is the problem?
+-e920   //  Note 920 cast from unsigned char to void
+-e921   // 921 Cast from Type to Type. This is literally warning of every cast that is being made
+-e922   // cast from double to short (we do this in parameter calculations)
+-e932   // passing near pointer to library function: we assume that our data is within 64k RAM
+-e952   // 952 Parameter 'Symbol' (Location) could be declared const
+-e956   // 956 Non const, non volatile static or external variable 'Symbol'
+-e958   // 958 Padding of Integer byte(s) is required to align string on Integer byte boundary
+-e959   // 959 struct size (Integer bytes) is not an even multiple of the maximum member alignment (Integer bytes)
+-e964   // 964 Header file ’FileName’ not directly used in module ’String’
+-e966   // 966 Indirectly included header file 'FileName' not used in module 'String'.
+        // It would give unnecessary warning for header structure as defined in the templates
+//-e974   // Just informational purpose. Activate for test team and report only if recursive functions are detected.
+-e975   // Unrecognized pragma ’Name’ will be ignored
+-e835   // Using of zero value defines to build a mask
+-e845   // Using of zero value defines to build a mask
+-e941   // Shifting value 0
+
+-"esym(835, +)" // Error -> Info 835 A zero has been given as left/right argument to operator '+'
+
+
+ //  ANSI limitations :
+
+    -"esym(793,macros in module)"                                  //  Info 793 ANSI limit of 1024 'macros in module' exceeded -- processing is unaffected
+    -"esym(793,external identifiers)"                              //  Info 793 ANSI limit of 6 'external identifiers' exceeded -- processing is unaffected
+    -"esym(793,conditional inclusion levels)"                      //  Info 793 ANSI limit of 8 'conditional inclusion levels' exceeded -- processing is unaffected
+    -"esym(793,#include levels)"                                   //  Info 793 ANSI limit of 8 '#include levels' exceeded -- processing is unaffected
+    -"esym(793, significant characters in an external identifier)" //  Info 793 ANSI/ISO limit of 6 'significant characters in an external identifier', 'Symbol', exceeded -- processing is unaffected
+    -"esym(793, parens in expression)"                             //  Info 793 ANSI/ISO limit of 32 'parens in expression' exceeded -- processing is unaffected
+
+
+/**********************************************************************************************************/
+//global message enabling
+/**********************************************************************************************************/
+
++e914          // Implicit adjustment of function return value from type to type
++e916          // Implicit pointer assignment conversion
++e936          // old-style function definition for function
++e947          // Subtract operator applied to pointers
++e973          // Unary operator in macro not paranthesized
+
+
+//  unit scope fo PC-Lint check :
+
++e552           //  Symbol 'Symbol' (Location) not accessed --
+                //  An external variable was not accessed though the variable was referenced.  
++e628           //  no argument information provided for function 'Symbol' (Location) --
+                //  The named function was called but there was no argument information supplied.
++e729           //  Symbol 'Symbol' (Location) not explicitly initialized --
+                //  The named inter-module variable (external variable) was not explicitly initialized.
+
+/**********************************************************************************************************/
+//selective message suppression
+/**********************************************************************************************************/
+
+-esym(950,"//")      // disable warning about "//" style comments
+-esym(960, 8.5)
+-esym(960, 8.9)
+-esym(960, 8.7)
+-esym(960, 10.1)
+-esym(960, 10.3)
+-esym(960, 10.6)
+-esym(960, 17.4)
+-esym(960, 19.4)
+-esym(960, 19.6)
+-esym(961, 19.7)
+-esym(960, 5.1)
+
+
+// 8.5 has to be switched off otherwise the inline functions (runtime optimization!!) 
+// can not be used also it would mess up our templates and design rules. Further nobody
+// could explain so far WHY this rule should be any good 
+
+// 8.7 disabled for MISRA 2004 based on the below MISRA 2012 rational.
+// Also it is in conflict with Coding rule 19a of  CAP0509384_A01_SW_Algo_Coding_Guideline_and_Naming_Convention_OSIS.pdf
+// The standard MISRA C 2012 downgraded the rule to advisory(now named 8.9.
+// ONEContiPmt Working group decission for MISRA 2012 Rule 8.9 (applied backward to MISRA 2004)	
+// Rational: 	
+// Disapplied because depending on the software configuration objects might or might not be used also in other functions.
+// affects also Whitebox Testing; Messtechnik/Debug/Simulationcode; Readability;
+
+// 8.9 An identifier with external linkage shall have exactly one external definition.
+// This message has a PC-Lint bug and is wrong generated
+
+// 10.1 Every init of an unsigned value would need an explicit type cast.
+// The real critical spots are detected anyway by a number of other rules
+
+// 10.3 has to be switched off. This rule makes absolutely no sense. The reson is to avoid confusion. 
+// The MISRA guideline states that (int16_t)(s32a * s32b) is compliant but (int32_t)(s16a * s16b) 
+// is not compliant. This is confusing!
+// Where as one of our codelines:
+// ICW_uw_MeasWeightfilt = (T_UWORD)((T_SLONG)ICW_uw_MeasWeightfilt + sl_Temp);
+// is reported as an error where I do not see a problem if it is made sure that the signed value is only 
+// in the positive range. On the other hand if you look at the "compliant" example (int16_t)(s32a * s32b) 
+// you should also better make sure that the stuff fits into 16 bits but you are not warned of it !!
+// we could switch off 12.7 for the bit shifts, but may have then problems with bit OR and AND therefore
+// we keep it and ignore the warnings for bit shifts 
+
+// 10.6 A "U" suffix shall be applied to all constants of unsigned type.
+// it conflicts with our rule to use type cast and no suffix
+
+// 17.4 Array indexing shall be the only allowed form of pointer arithmetic.
+
+// 19.4 Disallowed definition for macro
+
+// 19.6 has to be switched off because it conflicts our templates
+
+// 19.7 A function should be used in preference to a function-like macro.
+// functions-like macros are used on SW side. In algo side their are not used and this is visualy checked
+
+// 5.1 Identifiers (internal and external) shall not rely on the significance of more than 31 characters.
+// It was decided in the 2013 testing workshop to suppress this message.
+// The unsafe cases of identifiers which are the same in first their 31 characters are reported trough message 621.
+

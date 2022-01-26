@@ -1,0 +1,151 @@
+/************************************************************************************************************
+* BU: PPS                                                                                                   *
+* Name: LINT Configuration for uC projects in SW and Algo                                                   *
+* Created: 21.03.2013                                                                                       *
+* Author: Maria-Aurora Popa                                                                                 *
+************************************************************************************************************/
+/***********************************************************************************************************/
+// !!ATTENTION THIS FILE MUST NOT BE MODIFIED ON PROJECT LEVEL!!
+/***********************************************************************************************************/
+
+
+/***********************************************************************************************************/
+// General settings
+/***********************************************************************************************************/
+-strong(AirpaczJermdnaocz)
+// A Issue a warning upon some kind of Assignment to the strong type.
+// (assignment operator, return value, argument passing, initialization).
+// J Check for strong typing when a value is Joined (i.e., combined) 
+// with another type across a binary operator.
+// c ignore assignment of Constants.
+// z ignore assignment of Zero.
+
++fdi
+//Directory of Including file
+
+-dinline=__inline 
+//rename the keyword "inline" to "__inline" which is used by Lint
+-dCLASS_DESIGN=
+-d__cplusplus=
+
+/***********************************************************************************************************/
+// Warning levels
+/***********************************************************************************************************/
+-w4
+// general warning level
+
+-wlib(4)
+// -wlib(Level) sets a warning level for processing library headers. 
+// It will not affect C source modules.
+// -wlib(0) means no library messages
+
+-width(0)
+// don't break lines
+
+-hF1
+// always supply a File name
+
++e900
+// always produce at least one line of output
+
++ffn
+// use Full File Names (i.e. complete path names) in messages
+
++fce
+// (continue on #error directive encountered)
+
++fll
+//Daniel Goepelt:
+//Algo specific extension taken over from: Generic\Lint\Algo_specific.lnt 
+//Enable long long data type usage
+
+-maxopen(100)
+
+/**********************************************************************************************************/
+// Global message settings: defined as SW and Algo standard settings
+/**********************************************************************************************************/
+
+/**********************************************************************************************************/
+//global message suppression
+/**********************************************************************************************************/
+
+
+-e525  // Unexpected negative indentation
+-e537  // 537 Repeated include file 'FileName'
+-e539  // 539 Did not expect positive indentation from Location
+-e556  // indented  #
+-e571  // 571 Suspicious Cast
+-e714          // Symbol 'Symbol' (Location) not referenced
+-e725  // Positive Indentation expected
+-e756  // global typedef 'Symbol' (Location) not referenced
+-e757  // global declarator 'Symbol' (Location) not referenced
+-e778  // constant expression evaluates to 0
+-e830  // Location cited in prior message
+-e831  // Reference cited in prior message
+-e911  // 911 Implicit expression promotion from Type to Type
+-e915  // 915 Implicit conversion (Context) Type to Type
+-e919  // implicit conversion: we are getting bigger so where is the problem?
+-e920  // Note 920 cast from unsigned char to void
+-e921  // 921 Cast from Type to Type. This is literally warning of every cast that is being made
+-e922  // cast from double to short (we do this in parameter calculations)
+-e932  // passing near pointer to library function: we assume that our data is within 64k RAM
+-e952  // 952 Parameter 'Symbol' (Location) could be declared const
+-e956  // 956 Non const, non volatile static or external variable 'Symbol'
+-e958  // 958 Padding of Integer byte(s) is required to align string on Integer byte boundary
+-e959  // 959 struct size (Integer bytes) is not an even multiple of the maximum member alignment (Integer bytes)
+-e964  // 964 Header file ’FileName’ not directly used in module ’String’
+-e966  // 966 Indirectly included header file 'FileName' not used in module 'String'.
+       // It would give unnecessary warning for header structure as defined in the templates
+//-e974  // Just informational purpose. Activate for test team and report only if recursive functions are detected.
+-e975  // Unrecognized pragma ’Name’ will be ignored
+-e1714 // Member function 'Symbol' (Location) not referenced
+-e1762 // Member function 'Symbol' could be made const
+-e1904 // Old-style C comment
+-e1923 // macro 'Symbol' could become const variable
+-e1924 // C-style cast
+-e1716 // The reported methods are being overridden and called by the derived classes or, they are called using pointers to the base class. 
+       // PC-Lint is not able detect this situation so therefore, this is a PC-lint limitation and there are no other options but suppress the message.
+	   // messages is also suppressed with "onit checkout" -u
+// According to PC-Lint explanation: 1962 "This Elective Note is available for completeness so that a programmer can find all functions that could result in a class being modified.".
+// This is being reported for all functions which are modifying the class indirectly:
+// This doesn't mean we are violating any MISRA rule but is just an additional check provided by PC-Lint.
+// However, this is being reported in multiple places and it doesn't bring us any benefit so therefore, we will suppress it.
+-e1962 //rational above
+
+-"esym(835, +)" // Error -> Info 835 A zero has been given as left/right argument to operator '+'
+
+ //  ANSI limitations :
+
+    -"esym(793,macros in module)"                                  //  Info 793 ANSI limit of 1024 'macros in module' exceeded -- processing is unaffected
+    -"esym(793,external identifiers)"                              //  Info 793 ANSI limit of 6 'external identifiers' exceeded -- processing is unaffected
+    -"esym(793,conditional inclusion levels)"                      //  Info 793 ANSI limit of 8 'conditional inclusion levels' exceeded -- processing is unaffected
+    -"esym(793,#include levels)"                                   //  Info 793 ANSI limit of 8 '#include levels' exceeded -- processing is unaffected
+    -"esym(793, significant characters in an external identifier)" //  Info 793 ANSI/ISO limit of 6 'significant characters in an external identifier', 'Symbol', exceeded -- processing is unaffected
+    -"esym(793, parens in expression)"                             //  Info 793 ANSI/ISO limit of 32 'parens in expression' exceeded -- processing is unaffected
+
+
+/**********************************************************************************************************/
+//global message enabling
+/**********************************************************************************************************/
+
+
+/**********************************************************************************************************/
+//selective message suppression
+/**********************************************************************************************************/
+-esym(1960, 0-1-8)
+-esym(1960, 5-0-4)
+-esym(1960, 7-3-1)
+-esym(1960, 11-0-1)
+-esym(1960, 10-3-1)
+-esym(1960, 16-0-3)
+-e1932
+
+// 0-1-8: This rule checks whether there are any functions without any side effect. The issue is, PC-Lint is reporting false 
+// positives for some function. On top of that, our "stubbing" mechanism leads to "functions without implementation" by definition
+// 5-0-4: Implicit conversion changes signedness
+// 7-3-1: Global declaration of symbol
+// 10-3-1: This rule was mainly designed to avoid diamond hierarchy, but in our case, multiple inheritance is not allowed so 
+// occuring of this issue is not possible. Beside that, enforcing this rule will increase the resource consumption and limit
+// the developer's flexibility, therefore it is decided to suppress this rule.
+// 11-0-1: Member data in non-POD class types shall be private.
+// 16-0-3: It is decide to supress this rule because it conflicts with our templates

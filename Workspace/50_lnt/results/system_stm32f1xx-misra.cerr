@@ -1,0 +1,137 @@
+D:\Documents\50_Proyectos\90_ST\10_STM_BluePill\STM32CubeF1\Drivers\CMSIS\Device\ST\STM32F1xx\include\stm32f1xx.h  60  Note 960: Violates MISRA 2004 Required Rule 12.5, non-primary expression used with logical operator
+D:\Documents\50_Proyectos\90_ST\10_STM_BluePill\STM32CubeF1\Drivers\CMSIS\Device\ST\STM32F1xx\include\stm32f1xx.h  141  Error 309:  #error "Please select first the target STM32F1xx device used in your application (in stm32f1xx.h file)"
+D:\Documents\50_Proyectos\90_ST\10_STM_BluePill\STM32CubeF1\Drivers\CMSIS\Device\ST\STM32F1xx\include\stm32f1xx.h  155  Note 961: Violates MISRA 2004 Advisory Rule 12.6, boolean expression required for operator: '!'; the -strong(B,...) option can help provide Boolean-by-enforcement
+D:\Documents\50_Proyectos\90_ST\10_STM_BluePill\STM32CubeF1\Drivers\CMSIS\Device\ST\STM32F1xx\include\stm32f1xx.h  155  Note 944: argument for operator '!' always evaluates to False [Reference: file D:\Documents\50_Proyectos\90_ST\10_STM_BluePill\STM32CubeF1\Drivers\CMSIS\Device\ST\STM32F1xx\include\stm32f1xx.h: line 154]
+D:\Documents\50_Proyectos\90_ST\10_STM_BluePill\STM32CubeF1\Drivers\CMSIS\Device\ST\STM32F1xx\include\stm32f1xx.h  161  Note 961: Violates MISRA 2004 Advisory Rule 12.6, boolean expression required for operator: '!'; the -strong(B,...) option can help provide Boolean-by-enforcement
+D:\Documents\50_Proyectos\90_ST\10_STM_BluePill\STM32CubeF1\Drivers\CMSIS\Device\ST\STM32F1xx\include\stm32f1xx.h  161  Note 944: argument for operator '!' always evaluates to False [Reference: file D:\Documents\50_Proyectos\90_ST\10_STM_BluePill\STM32CubeF1\Drivers\CMSIS\Device\ST\STM32F1xx\include\stm32f1xx.h: line 160]
+D:\Documents\50_Proyectos\90_ST\10_STM_BluePill\STM32CubeF1\Drivers\CMSIS\Device\ST\STM32F1xx\include\stm32f1xx.h  168  Note 961: Violates MISRA 2004 Advisory Rule 12.6, boolean expression required for operator: '!'; the -strong(B,...) option can help provide Boolean-by-enforcement
+D:\Documents\50_Proyectos\90_ST\10_STM_BluePill\STM32CubeF1\Drivers\CMSIS\Device\ST\STM32F1xx\include\stm32f1xx.h  168  Note 944: argument for operator '!' always evaluates to False [Reference: file D:\Documents\50_Proyectos\90_ST\10_STM_BluePill\STM32CubeF1\Drivers\CMSIS\Device\ST\STM32F1xx\include\stm32f1xx.h: line 167]
+D:\Documents\50_Proyectos\90_ST\10_STM_BluePill\Workspace\20_src\system_stm32f1xx.c  122  Error 129: declaration expected, identifier 'uint32_t' ignored
+D:\Documents\50_Proyectos\90_ST\10_STM_BluePill\Workspace\20_src\system_stm32f1xx.c  122  Error 129: declaration expected, identifier 'SystemCoreClock' ignored
+D:\Documents\50_Proyectos\90_ST\10_STM_BluePill\Workspace\20_src\system_stm32f1xx.c  122  Error 10: Expecting identifier or other declarator
+D:\Documents\50_Proyectos\90_ST\10_STM_BluePill\Workspace\20_src\system_stm32f1xx.c  122  Error 19: Useless Declaration
+D:\Documents\50_Proyectos\90_ST\10_STM_BluePill\Workspace\20_src\system_stm32f1xx.c  123  Info 808: No explicit type given symbol 'uint8_t', int assumed [MISRA 2004 Rule 8.2, required]
+D:\Documents\50_Proyectos\90_ST\10_STM_BluePill\Workspace\20_src\system_stm32f1xx.c  124  Info 808: No explicit type given symbol 'uint8_t', int assumed [MISRA 2004 Rule 8.2, required]
+D:\Documents\50_Proyectos\90_ST\10_STM_BluePill\Workspace\20_src\system_stm32f1xx.c  124  Error 31: Redefinition of symbol 'uint8_t' compare with line 123 [MISRA 2004 Rule 1.2, required]
+D:\Documents\50_Proyectos\90_ST\10_STM_BluePill\Workspace\20_src\system_stm32f1xx.c  124  Error 10: Expecting ';'
+D:\Documents\50_Proyectos\90_ST\10_STM_BluePill\Workspace\20_src\system_stm32f1xx.c  156  Note 957: Function 'SystemInit' defined without a prototype in scope [MISRA 2004 Rule 8.1, required]
+D:\Documents\50_Proyectos\90_ST\10_STM_BluePill\Workspace\20_src\system_stm32f1xx.c  159  Error 40: Undeclared identifier 'RCC' [MISRA 2004 Rule 1.2, required]
+D:\Documents\50_Proyectos\90_ST\10_STM_BluePill\Workspace\20_src\system_stm32f1xx.c  159  Error 10: Expecting a structure or union
+D:\Documents\50_Proyectos\90_ST\10_STM_BluePill\Workspace\20_src\system_stm32f1xx.c  159  Error 40: Undeclared identifier 'CR' [MISRA 2004 Rule 1.2, required]
+D:\Documents\50_Proyectos\90_ST\10_STM_BluePill\Workspace\20_src\system_stm32f1xx.c  159  Error 40: Undeclared identifier 'uint32_t' [MISRA 2004 Rule 1.2, required]
+D:\Documents\50_Proyectos\90_ST\10_STM_BluePill\Workspace\20_src\system_stm32f1xx.c  159  Error 63: Expected an lvalue
+D:\Documents\50_Proyectos\90_ST\10_STM_BluePill\Workspace\20_src\system_stm32f1xx.c  159  Error 10: Expecting ';'
+D:\Documents\50_Proyectos\90_ST\10_STM_BluePill\Workspace\20_src\system_stm32f1xx.c  162  Note 960: Violates MISRA 2004 Required Rule 12.5, non-primary expression used with logical operator
+D:\Documents\50_Proyectos\90_ST\10_STM_BluePill\Workspace\20_src\system_stm32f1xx.c  163  Error 40: Undeclared identifier 'RCC' [MISRA 2004 Rule 1.2, required]
+D:\Documents\50_Proyectos\90_ST\10_STM_BluePill\Workspace\20_src\system_stm32f1xx.c  163  Error 10: Expecting a structure or union
+D:\Documents\50_Proyectos\90_ST\10_STM_BluePill\Workspace\20_src\system_stm32f1xx.c  163  Error 40: Undeclared identifier 'CFGR' [MISRA 2004 Rule 1.2, required]
+D:\Documents\50_Proyectos\90_ST\10_STM_BluePill\Workspace\20_src\system_stm32f1xx.c  163  Error 40: Undeclared identifier 'uint32_t' [MISRA 2004 Rule 1.2, required]
+D:\Documents\50_Proyectos\90_ST\10_STM_BluePill\Workspace\20_src\system_stm32f1xx.c  163  Error 63: Expected an lvalue
+D:\Documents\50_Proyectos\90_ST\10_STM_BluePill\Workspace\20_src\system_stm32f1xx.c  163  Error 10: Expecting ';'
+D:\Documents\50_Proyectos\90_ST\10_STM_BluePill\Workspace\20_src\system_stm32f1xx.c  169  Error 40: Undeclared identifier 'RCC' [MISRA 2004 Rule 1.2, required]
+D:\Documents\50_Proyectos\90_ST\10_STM_BluePill\Workspace\20_src\system_stm32f1xx.c  169  Error 10: Expecting a structure or union
+D:\Documents\50_Proyectos\90_ST\10_STM_BluePill\Workspace\20_src\system_stm32f1xx.c  169  Error 40: Undeclared identifier 'CR' [MISRA 2004 Rule 1.2, required]
+D:\Documents\50_Proyectos\90_ST\10_STM_BluePill\Workspace\20_src\system_stm32f1xx.c  169  Error 40: Undeclared identifier 'uint32_t' [MISRA 2004 Rule 1.2, required]
+D:\Documents\50_Proyectos\90_ST\10_STM_BluePill\Workspace\20_src\system_stm32f1xx.c  169  Error 63: Expected an lvalue
+D:\Documents\50_Proyectos\90_ST\10_STM_BluePill\Workspace\20_src\system_stm32f1xx.c  169  Error 10: Expecting ';'
+D:\Documents\50_Proyectos\90_ST\10_STM_BluePill\Workspace\20_src\system_stm32f1xx.c  172  Error 40: Undeclared identifier 'RCC' [MISRA 2004 Rule 1.2, required]
+D:\Documents\50_Proyectos\90_ST\10_STM_BluePill\Workspace\20_src\system_stm32f1xx.c  172  Error 10: Expecting a structure or union
+D:\Documents\50_Proyectos\90_ST\10_STM_BluePill\Workspace\20_src\system_stm32f1xx.c  172  Error 40: Undeclared identifier 'CR' [MISRA 2004 Rule 1.2, required]
+D:\Documents\50_Proyectos\90_ST\10_STM_BluePill\Workspace\20_src\system_stm32f1xx.c  172  Error 40: Undeclared identifier 'uint32_t' [MISRA 2004 Rule 1.2, required]
+D:\Documents\50_Proyectos\90_ST\10_STM_BluePill\Workspace\20_src\system_stm32f1xx.c  172  Error 63: Expected an lvalue
+D:\Documents\50_Proyectos\90_ST\10_STM_BluePill\Workspace\20_src\system_stm32f1xx.c  172  Error 10: Expecting ';'
+D:\Documents\50_Proyectos\90_ST\10_STM_BluePill\Workspace\20_src\system_stm32f1xx.c  175  Error 40: Undeclared identifier 'RCC' [MISRA 2004 Rule 1.2, required]
+D:\Documents\50_Proyectos\90_ST\10_STM_BluePill\Workspace\20_src\system_stm32f1xx.c  175  Error 10: Expecting a structure or union
+D:\Documents\50_Proyectos\90_ST\10_STM_BluePill\Workspace\20_src\system_stm32f1xx.c  175  Error 40: Undeclared identifier 'CFGR' [MISRA 2004 Rule 1.2, required]
+D:\Documents\50_Proyectos\90_ST\10_STM_BluePill\Workspace\20_src\system_stm32f1xx.c  175  Error 40: Undeclared identifier 'uint32_t' [MISRA 2004 Rule 1.2, required]
+D:\Documents\50_Proyectos\90_ST\10_STM_BluePill\Workspace\20_src\system_stm32f1xx.c  175  Error 63: Expected an lvalue
+D:\Documents\50_Proyectos\90_ST\10_STM_BluePill\Workspace\20_src\system_stm32f1xx.c  175  Error 10: Expecting ';'
+D:\Documents\50_Proyectos\90_ST\10_STM_BluePill\Workspace\20_src\system_stm32f1xx.c  194  Error 40: Undeclared identifier 'RCC' [MISRA 2004 Rule 1.2, required]
+D:\Documents\50_Proyectos\90_ST\10_STM_BluePill\Workspace\20_src\system_stm32f1xx.c  194  Error 10: Expecting a structure or union
+D:\Documents\50_Proyectos\90_ST\10_STM_BluePill\Workspace\20_src\system_stm32f1xx.c  194  Error 40: Undeclared identifier 'CIR' [MISRA 2004 Rule 1.2, required]
+D:\Documents\50_Proyectos\90_ST\10_STM_BluePill\Workspace\20_src\system_stm32f1xx.c  194  Error 63: Expected an lvalue
+D:\Documents\50_Proyectos\90_ST\10_STM_BluePill\Workspace\20_src\system_stm32f1xx.c  206  Error 40: Undeclared identifier 'SCB' [MISRA 2004 Rule 1.2, required]
+D:\Documents\50_Proyectos\90_ST\10_STM_BluePill\Workspace\20_src\system_stm32f1xx.c  206  Error 10: Expecting a structure or union
+D:\Documents\50_Proyectos\90_ST\10_STM_BluePill\Workspace\20_src\system_stm32f1xx.c  206  Error 40: Undeclared identifier 'VTOR' [MISRA 2004 Rule 1.2, required]
+D:\Documents\50_Proyectos\90_ST\10_STM_BluePill\Workspace\20_src\system_stm32f1xx.c  206  Error 40: Undeclared identifier 'FLASH_BASE' [MISRA 2004 Rule 1.2, required]
+D:\Documents\50_Proyectos\90_ST\10_STM_BluePill\Workspace\20_src\system_stm32f1xx.c  206  Error 63: Expected an lvalue
+D:\Documents\50_Proyectos\90_ST\10_STM_BluePill\Workspace\20_src\system_stm32f1xx.c  246  Note 957: Function 'SystemCoreClockUpdate' defined without a prototype in scope [MISRA 2004 Rule 8.1, required]
+D:\Documents\50_Proyectos\90_ST\10_STM_BluePill\Workspace\20_src\system_stm32f1xx.c  247  Error 40: Undeclared identifier 'uint32_t' [MISRA 2004 Rule 1.2, required]
+D:\Documents\50_Proyectos\90_ST\10_STM_BluePill\Workspace\20_src\system_stm32f1xx.c  247  Warning 522: Highest operation, a 'constant', lacks side-effects [MISRA 2004 Rule 14.2, required]
+D:\Documents\50_Proyectos\90_ST\10_STM_BluePill\Workspace\20_src\system_stm32f1xx.c  247  Error 10: Expecting ';'
+D:\Documents\50_Proyectos\90_ST\10_STM_BluePill\Workspace\20_src\system_stm32f1xx.c  258  Error 40: Undeclared identifier 'tmp' [MISRA 2004 Rule 1.2, required]
+D:\Documents\50_Proyectos\90_ST\10_STM_BluePill\Workspace\20_src\system_stm32f1xx.c  258  Error 40: Undeclared identifier 'RCC' [MISRA 2004 Rule 1.2, required]
+D:\Documents\50_Proyectos\90_ST\10_STM_BluePill\Workspace\20_src\system_stm32f1xx.c  258  Error 10: Expecting a structure or union
+D:\Documents\50_Proyectos\90_ST\10_STM_BluePill\Workspace\20_src\system_stm32f1xx.c  258  Error 40: Undeclared identifier 'CFGR' [MISRA 2004 Rule 1.2, required]
+D:\Documents\50_Proyectos\90_ST\10_STM_BluePill\Workspace\20_src\system_stm32f1xx.c  258  Error 40: Undeclared identifier 'RCC_CFGR_SWS' [MISRA 2004 Rule 1.2, required]
+D:\Documents\50_Proyectos\90_ST\10_STM_BluePill\Workspace\20_src\system_stm32f1xx.c  258  Error 63: Expected an lvalue
+D:\Documents\50_Proyectos\90_ST\10_STM_BluePill\Workspace\20_src\system_stm32f1xx.c  260  Error 40: Undeclared identifier 'tmp' [MISRA 2004 Rule 1.2, required]
+D:\Documents\50_Proyectos\90_ST\10_STM_BluePill\Workspace\20_src\system_stm32f1xx.c  263  Error 40: Undeclared identifier 'SystemCoreClock' [MISRA 2004 Rule 1.2, required]
+D:\Documents\50_Proyectos\90_ST\10_STM_BluePill\Workspace\20_src\system_stm32f1xx.c  263  Error 40: Undeclared identifier 'uint32_t' [MISRA 2004 Rule 1.2, required]
+D:\Documents\50_Proyectos\90_ST\10_STM_BluePill\Workspace\20_src\system_stm32f1xx.c  263  Error 10: Expecting ')'
+D:\Documents\50_Proyectos\90_ST\10_STM_BluePill\Workspace\20_src\system_stm32f1xx.c  263  Error 63: Expected an lvalue
+D:\Documents\50_Proyectos\90_ST\10_STM_BluePill\Workspace\20_src\system_stm32f1xx.c  266  Error 40: Undeclared identifier 'SystemCoreClock' [MISRA 2004 Rule 1.2, required]
+D:\Documents\50_Proyectos\90_ST\10_STM_BluePill\Workspace\20_src\system_stm32f1xx.c  266  Error 40: Undeclared identifier 'uint32_t' [MISRA 2004 Rule 1.2, required]
+D:\Documents\50_Proyectos\90_ST\10_STM_BluePill\Workspace\20_src\system_stm32f1xx.c  266  Error 10: Expecting ')'
+D:\Documents\50_Proyectos\90_ST\10_STM_BluePill\Workspace\20_src\system_stm32f1xx.c  266  Error 63: Expected an lvalue
+D:\Documents\50_Proyectos\90_ST\10_STM_BluePill\Workspace\20_src\system_stm32f1xx.c  271  Error 40: Undeclared identifier 'pllmull' [MISRA 2004 Rule 1.2, required]
+D:\Documents\50_Proyectos\90_ST\10_STM_BluePill\Workspace\20_src\system_stm32f1xx.c  271  Error 40: Undeclared identifier 'RCC' [MISRA 2004 Rule 1.2, required]
+D:\Documents\50_Proyectos\90_ST\10_STM_BluePill\Workspace\20_src\system_stm32f1xx.c  271  Error 10: Expecting a structure or union
+D:\Documents\50_Proyectos\90_ST\10_STM_BluePill\Workspace\20_src\system_stm32f1xx.c  271  Error 40: Undeclared identifier 'CFGR' [MISRA 2004 Rule 1.2, required]
+D:\Documents\50_Proyectos\90_ST\10_STM_BluePill\Workspace\20_src\system_stm32f1xx.c  271  Error 40: Undeclared identifier 'RCC_CFGR_PLLMULL' [MISRA 2004 Rule 1.2, required]
+D:\Documents\50_Proyectos\90_ST\10_STM_BluePill\Workspace\20_src\system_stm32f1xx.c  271  Error 63: Expected an lvalue
+D:\Documents\50_Proyectos\90_ST\10_STM_BluePill\Workspace\20_src\system_stm32f1xx.c  272  Error 40: Undeclared identifier 'pllsource' [MISRA 2004 Rule 1.2, required]
+D:\Documents\50_Proyectos\90_ST\10_STM_BluePill\Workspace\20_src\system_stm32f1xx.c  272  Error 40: Undeclared identifier 'RCC' [MISRA 2004 Rule 1.2, required]
+D:\Documents\50_Proyectos\90_ST\10_STM_BluePill\Workspace\20_src\system_stm32f1xx.c  272  Error 10: Expecting a structure or union
+D:\Documents\50_Proyectos\90_ST\10_STM_BluePill\Workspace\20_src\system_stm32f1xx.c  272  Error 40: Undeclared identifier 'CFGR' [MISRA 2004 Rule 1.2, required]
+D:\Documents\50_Proyectos\90_ST\10_STM_BluePill\Workspace\20_src\system_stm32f1xx.c  272  Error 40: Undeclared identifier 'RCC_CFGR_PLLSRC' [MISRA 2004 Rule 1.2, required]
+D:\Documents\50_Proyectos\90_ST\10_STM_BluePill\Workspace\20_src\system_stm32f1xx.c  272  Error 63: Expected an lvalue
+D:\Documents\50_Proyectos\90_ST\10_STM_BluePill\Workspace\20_src\system_stm32f1xx.c  274  Note 960: Violates MISRA 2004 Required Rule 12.5, non-primary expression used with logical operator
+D:\Documents\50_Proyectos\90_ST\10_STM_BluePill\Workspace\20_src\system_stm32f1xx.c  275  Error 40: Undeclared identifier 'pllmull' [MISRA 2004 Rule 1.2, required]
+D:\Documents\50_Proyectos\90_ST\10_STM_BluePill\Workspace\20_src\system_stm32f1xx.c  275  Error 40: Undeclared identifier 'pllmull' [MISRA 2004 Rule 1.2, required]
+D:\Documents\50_Proyectos\90_ST\10_STM_BluePill\Workspace\20_src\system_stm32f1xx.c  275  Note 960: Violates MISRA 2004 Required Rule 12.7, Bitwise operator applied to signed underlying type: >>
+D:\Documents\50_Proyectos\90_ST\10_STM_BluePill\Workspace\20_src\system_stm32f1xx.c  275  Error 63: Expected an lvalue
+D:\Documents\50_Proyectos\90_ST\10_STM_BluePill\Workspace\20_src\system_stm32f1xx.c  277  Error 40: Undeclared identifier 'pllsource' [MISRA 2004 Rule 1.2, required]
+D:\Documents\50_Proyectos\90_ST\10_STM_BluePill\Workspace\20_src\system_stm32f1xx.c  280  Error 40: Undeclared identifier 'SystemCoreClock' [MISRA 2004 Rule 1.2, required]
+D:\Documents\50_Proyectos\90_ST\10_STM_BluePill\Workspace\20_src\system_stm32f1xx.c  280  Error 40: Undeclared identifier 'uint32_t' [MISRA 2004 Rule 1.2, required]
+D:\Documents\50_Proyectos\90_ST\10_STM_BluePill\Workspace\20_src\system_stm32f1xx.c  280  Error 10: Expecting ')'
+D:\Documents\50_Proyectos\90_ST\10_STM_BluePill\Workspace\20_src\system_stm32f1xx.c  280  Note 960: Violates MISRA 2004 Required Rule 12.7, Bitwise operator applied to signed underlying type: >>
+D:\Documents\50_Proyectos\90_ST\10_STM_BluePill\Workspace\20_src\system_stm32f1xx.c  280  Error 40: Undeclared identifier 'pllmull' [MISRA 2004 Rule 1.2, required]
+D:\Documents\50_Proyectos\90_ST\10_STM_BluePill\Workspace\20_src\system_stm32f1xx.c  280  Error 63: Expected an lvalue
+D:\Documents\50_Proyectos\90_ST\10_STM_BluePill\Workspace\20_src\system_stm32f1xx.c  290  Error 40: Undeclared identifier 'RCC' [MISRA 2004 Rule 1.2, required]
+D:\Documents\50_Proyectos\90_ST\10_STM_BluePill\Workspace\20_src\system_stm32f1xx.c  290  Error 10: Expecting a structure or union
+D:\Documents\50_Proyectos\90_ST\10_STM_BluePill\Workspace\20_src\system_stm32f1xx.c  290  Error 40: Undeclared identifier 'CFGR' [MISRA 2004 Rule 1.2, required]
+D:\Documents\50_Proyectos\90_ST\10_STM_BluePill\Workspace\20_src\system_stm32f1xx.c  290  Error 40: Undeclared identifier 'RCC_CFGR_PLLXTPRE' [MISRA 2004 Rule 1.2, required]
+D:\Documents\50_Proyectos\90_ST\10_STM_BluePill\Workspace\20_src\system_stm32f1xx.c  290  Error 40: Undeclared identifier 'uint32_t' [MISRA 2004 Rule 1.2, required]
+D:\Documents\50_Proyectos\90_ST\10_STM_BluePill\Workspace\20_src\system_stm32f1xx.c  290  Error 10: Expecting ')'
+D:\Documents\50_Proyectos\90_ST\10_STM_BluePill\Workspace\20_src\system_stm32f1xx.c  292  Error 40: Undeclared identifier 'SystemCoreClock' [MISRA 2004 Rule 1.2, required]
+D:\Documents\50_Proyectos\90_ST\10_STM_BluePill\Workspace\20_src\system_stm32f1xx.c  292  Error 40: Undeclared identifier 'uint32_t' [MISRA 2004 Rule 1.2, required]
+D:\Documents\50_Proyectos\90_ST\10_STM_BluePill\Workspace\20_src\system_stm32f1xx.c  292  Error 10: Expecting ')'
+D:\Documents\50_Proyectos\90_ST\10_STM_BluePill\Workspace\20_src\system_stm32f1xx.c  292  Note 960: Violates MISRA 2004 Required Rule 12.7, Bitwise operator applied to signed underlying type: >>
+D:\Documents\50_Proyectos\90_ST\10_STM_BluePill\Workspace\20_src\system_stm32f1xx.c  292  Error 40: Undeclared identifier 'pllmull' [MISRA 2004 Rule 1.2, required]
+D:\Documents\50_Proyectos\90_ST\10_STM_BluePill\Workspace\20_src\system_stm32f1xx.c  292  Error 63: Expected an lvalue
+D:\Documents\50_Proyectos\90_ST\10_STM_BluePill\Workspace\20_src\system_stm32f1xx.c  296  Error 40: Undeclared identifier 'SystemCoreClock' [MISRA 2004 Rule 1.2, required]
+D:\Documents\50_Proyectos\90_ST\10_STM_BluePill\Workspace\20_src\system_stm32f1xx.c  296  Error 40: Undeclared identifier 'uint32_t' [MISRA 2004 Rule 1.2, required]
+D:\Documents\50_Proyectos\90_ST\10_STM_BluePill\Workspace\20_src\system_stm32f1xx.c  296  Error 10: Expecting ')'
+D:\Documents\50_Proyectos\90_ST\10_STM_BluePill\Workspace\20_src\system_stm32f1xx.c  296  Error 40: Undeclared identifier 'pllmull' [MISRA 2004 Rule 1.2, required]
+D:\Documents\50_Proyectos\90_ST\10_STM_BluePill\Workspace\20_src\system_stm32f1xx.c  296  Error 63: Expected an lvalue
+D:\Documents\50_Proyectos\90_ST\10_STM_BluePill\Workspace\20_src\system_stm32f1xx.c  342  Error 40: Undeclared identifier 'SystemCoreClock' [MISRA 2004 Rule 1.2, required]
+D:\Documents\50_Proyectos\90_ST\10_STM_BluePill\Workspace\20_src\system_stm32f1xx.c  342  Error 40: Undeclared identifier 'uint32_t' [MISRA 2004 Rule 1.2, required]
+D:\Documents\50_Proyectos\90_ST\10_STM_BluePill\Workspace\20_src\system_stm32f1xx.c  342  Error 10: Expecting ')'
+D:\Documents\50_Proyectos\90_ST\10_STM_BluePill\Workspace\20_src\system_stm32f1xx.c  342  Error 63: Expected an lvalue
+D:\Documents\50_Proyectos\90_ST\10_STM_BluePill\Workspace\20_src\system_stm32f1xx.c  348  Error 40: Undeclared identifier 'tmp' [MISRA 2004 Rule 1.2, required]
+D:\Documents\50_Proyectos\90_ST\10_STM_BluePill\Workspace\20_src\system_stm32f1xx.c  348  Error 40: Undeclared identifier 'AHBPrescTable' [MISRA 2004 Rule 1.2, required]
+D:\Documents\50_Proyectos\90_ST\10_STM_BluePill\Workspace\20_src\system_stm32f1xx.c  348  Warning 409: Expecting a pointer or array
+D:\Documents\50_Proyectos\90_ST\10_STM_BluePill\Workspace\20_src\system_stm32f1xx.c  348  Error 40: Undeclared identifier 'RCC' [MISRA 2004 Rule 1.2, required]
+D:\Documents\50_Proyectos\90_ST\10_STM_BluePill\Workspace\20_src\system_stm32f1xx.c  348  Error 10: Expecting a structure or union
+D:\Documents\50_Proyectos\90_ST\10_STM_BluePill\Workspace\20_src\system_stm32f1xx.c  348  Error 40: Undeclared identifier 'CFGR' [MISRA 2004 Rule 1.2, required]
+D:\Documents\50_Proyectos\90_ST\10_STM_BluePill\Workspace\20_src\system_stm32f1xx.c  348  Error 40: Undeclared identifier 'RCC_CFGR_HPRE' [MISRA 2004 Rule 1.2, required]
+D:\Documents\50_Proyectos\90_ST\10_STM_BluePill\Workspace\20_src\system_stm32f1xx.c  348  Note 960: Violates MISRA 2004 Required Rule 12.7, Bitwise operator applied to signed underlying type: >>
+D:\Documents\50_Proyectos\90_ST\10_STM_BluePill\Workspace\20_src\system_stm32f1xx.c  348  Error 63: Expected an lvalue
+D:\Documents\50_Proyectos\90_ST\10_STM_BluePill\Workspace\20_src\system_stm32f1xx.c  350  Error 40: Undeclared identifier 'SystemCoreClock' [MISRA 2004 Rule 1.2, required]
+D:\Documents\50_Proyectos\90_ST\10_STM_BluePill\Workspace\20_src\system_stm32f1xx.c  350  Error 40: Undeclared identifier 'tmp' [MISRA 2004 Rule 1.2, required]
+D:\Documents\50_Proyectos\90_ST\10_STM_BluePill\Workspace\20_src\system_stm32f1xx.c  350  Note 960: Violates MISRA 2004 Required Rule 12.7, Bitwise operator applied to signed underlying type: >>
+D:\Documents\50_Proyectos\90_ST\10_STM_BluePill\Workspace\20_src\system_stm32f1xx.c  350  Error 63: Expected an lvalue
+D:\Documents\50_Proyectos\90_ST\10_STM_BluePill\Workspace\20_src\system_stm32f1xx.c  429  Info 766: Header file 'D:\Documents\50_Proyectos\90_ST\10_STM_BluePill\STM32CubeF1\Drivers\CMSIS\Device\ST\STM32F1xx\include\stm32f1xx.h' not used in module 'D:\Documents\50_Proyectos\90_ST\10_STM_BluePill\Workspace\20_src\system_stm32f1xx.c'
+Note 974: Worst case function for stack usage: 'SystemInit' is finite, requires 0 bytes total stack in calling 'no function'. See +stack for a full report. [MISRA 2004 Rule 16.2, required]
+Note 900: Successful completion, 136 messages produced
