@@ -30,3 +30,6 @@
 *.exe
 *.out
 *.app
+
+# Directories from external dependencies:
+arm-none-eabi-gcc-xpack\
