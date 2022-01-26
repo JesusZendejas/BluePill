@@ -33,3 +33,5 @@
 
 # Directories from external dependencies:
 arm-none-eabi-gcc-xpack/
+STM32CubeF1/
+windows-build-tools-xpack/
