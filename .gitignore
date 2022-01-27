@@ -31,6 +31,11 @@
 *.out
 *.app
 
+# Embedded Compiled Object files
+*.elf
+*.hex
+*.map
+
 # Directories from external dependencies:
 arm-none-eabi-gcc-xpack/
 STM32CubeF1/
