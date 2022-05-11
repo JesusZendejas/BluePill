@@ -52,3 +52,10 @@ monitor halt
 monitor reset 0
 file helloworld.elf
 load
+
+
+
+---------------------------------------------------------------------------------------------------------------------------
+Raspberry:
+1. sudo apt install cmake gcc-arm-none-eabi libnewlib-arm-none-eabi build-essential
+2. git clone https://github.com/JesusZendejas/BluePill.git
